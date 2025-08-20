@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <title>Rio • Cobertura Multimodal</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/684/684908.png">
+</head>
+<body>
+  <div id="map"></div>
+
+  <!-- UI overlays -->
+  <div id="timestamp">Carregando…</div>
+  <div id="legend">
+    <div><span class="legend-box" style="background:#00FF00"></span> Bike</div>
+    <div><span class="legend-box" style="background:#FF0000"></span> Ônibus</div>
+    <div><span class="legend-box" style="background:#0000FF"></span> Metrô/SuperVia/VLT</div>
+    <div><span class="legend-box" style="background:#FFFF00"></span> Bike + Ônibus</div>
+    <div><span class="legend-box" style="background:#00FFFF"></span> Bike + Metrô/SuperVia/VLT</div>
+    <div><span class="legend-box" style="background:#FF00FF"></span> Ônibus + Metrô/SuperVia/VLT</div>
+    <div><span class="legend-box" style="background:#FFFFFF; border:1px solid #ccc"></span> Todos</div>
+  </div>
+
+  <div id="status" hidden></div>
+  <div id="credits">
+    Rio Mapa Multimodal — 2025<br>
+    Dados: SuperVia, MetrôRio, VLT, BikeRio (GBFS), OSM, Data.Rio (GTFS - Ônibus)<br>
+    © Filipe Santiago Luna — MIT & CC BY 4.0
+  </div>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <!-- optional plugin; harmless if it 404s or you don't use it -->
+  <script src="script.js"></script>
+</body>
+</html>

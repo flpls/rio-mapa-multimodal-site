@@ -1,0 +1,127 @@
+html, body, #map {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', 'Helvetica Neue', sans-serif;
+}
+
+#timestamp {
+  position: absolute;
+  top: 10px;
+  left: 12px;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 5px 10px;
+  font-size: 13px;
+  border-radius: 4px;
+  z-index: 1000;
+  pointer-events: none;
+}
+
+#legend {
+  position: absolute;
+  top: 50px;
+  left: 12px;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 8px 10px;
+  color: white;
+  font-size: 12px;
+  line-height: 1.4em;
+  border-radius: 6px;
+  z-index: 1000;
+}
+
+#status {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  background: rgba(180, 0, 0, 0.75);
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  z-index: 1000;
+}
+
+.legend-box {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin-right: 6px;
+  vertical-align: middle;
+  border-radius: 2px;
+  border: 1px solid rgba(255,255,255,0.3);
+}
+
+#credits {
+  position: absolute;
+  bottom: 24px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 6px 10px;
+  font-size: 9px;
+  border-radius: 4px;
+  z-index: 1000;
+  line-height: 1.4em;
+  text-align: left;
+  max-width: 280px;
+}
+
+/* Agrupa zoom + escala lado a lado no canto inferior esquerdo */
+.leaflet-bottom.leaflet-left {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  gap: 12px;
+  padding: 8px;
+}
+
+.leaflet-control-scale {
+  margin: 0 !important;
+}
+
+/* Leaflet scale cosmetics */
+.leaflet-control-scale {
+  background: none !important;
+  padding: 4px 6px !important;
+  box-shadow: none !important;
+  line-height: 1.4em !important;
+  font-size: 11px !important;
+  font-family: 'Inter', sans-serif !important;
+}
+.leaflet-control-scale-line {
+  background: none !important;
+  border: none !important;
+  border-top: 1px solid white !important;
+  height: 6px !important;
+  margin-top: 2px !important;
+  text-align: center !important;
+  min-width: 60px;
+}
+
+@media (max-width: 600px) {
+  #legend {
+    top: 8px;
+    left: 8px;
+    font-size: 11px;
+    padding: 6px;
+  }
+  #timestamp {
+    top: 8px;
+    left: calc(8px + 165px);
+    font-size: 11px;
+    max-width: 45vw;
+  }
+  #status {
+    top: auto;
+    bottom: 8px;
+    left: 8px;
+    right: auto;
+  }
+  #credits {
+    font-size: 8px;
+    bottom: 30px;
+    max-width: 90%;
+  }
+}
