@@ -2,15 +2,18 @@
 <html lang="pt-BR">
 <head>
   <meta charset="utf-8" />
-  <title>Rio • Cobertura Multimodal</title>
+  <meta http-equiv="Content-Language" content="pt-BR">
+  <title>CicloData - Mapeamento Integrado da Ciclomobilidade</title>
+  <meta name="description" content="CicloData — Cobertura de Bike, Ônibus e Trilhos (Metrô/SuperVia/VLT) no Rio de Janeiro por janela de 30 minutos, em malha H3.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script>
-  if (!window.location.search.includes('file=')) {
-    window.location.href = '?file=data/hex_coverage_2025-08-19_12h00.geojson';
-  }
-</script>
+    const p = new URLSearchParams(window.location.search);
+    if (!p.has('file')) {
+      p.set('file', 'data/hex_coverage_2025-08-19_12h00.geojson');
+      window.location.search = p.toString();
+    }
+  </script>
 
-  <!-- Leaflet CSS -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <link rel="stylesheet" href="style.css" />
   <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/684/684908.png">
@@ -18,7 +21,6 @@
 <body>
   <div id="map"></div>
 
-  <!-- UI overlays -->
   <div id="timestamp">Carregando…</div>
   <div id="legend">
     <div><span class="legend-box" style="background:#00FF00"></span> Bike</div>
@@ -32,14 +34,12 @@
 
   <div id="status" hidden></div>
   <div id="credits">
-    Rio Mapa Multimodal — 2025<br>
+    CicloData — 2025<br>
     Dados: SuperVia, MetrôRio, VLT, BikeRio (GBFS), OSM, Data.Rio (GTFS - Ônibus)<br>
     © Filipe Santiago Luna — MIT & CC BY 4.0
   </div>
 
-  <!-- Leaflet JS -->
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-  <!-- optional plugin; harmless if it 404s or you don't use it -->
   <script src="script.js"></script>
 </body>
 </html>
